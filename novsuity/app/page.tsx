@@ -6,7 +6,6 @@ import {
   ChevronLeft,
   ChevronRight,
   DoorClosed,
-  Instagram,
   Menu,
   SquareDashedBottom,
   Table2,
@@ -77,7 +76,7 @@ function DoorMockup() {
         <div className="absolute left-1/2 top-12 h-10 w-px -translate-x-1/2 bg-[#171717]" />
         <div className="absolute left-1/2 top-20 h-7 w-16 -translate-x-1/2 rounded-t-full border-t-4 border-[#171717]" />
         <img
-          src="/apres-vetement.jpeg"
+          src="/apres_vetement.jpeg"
           alt="Vêtement présenté sur fond propre"
           className="absolute left-1/2 top-[105px] h-[230px] w-[230px] -translate-x-1/2 rounded-xl bg-white object-cover object-center shadow-xl"
         />
@@ -141,7 +140,7 @@ function BeforeAfter() {
         <div className="grid gap-3 md:grid-cols-2">
           <div className="relative overflow-hidden rounded-[1.5rem] bg-white shadow-[0_10px_35px_rgba(0,0,0,0.08)]">
             <img
-              src="/avant-vetement.jpeg"
+              src="/avant_vetement.jpeg"
               alt="Avant NovSuity"
               className="aspect-[4/3] h-full w-full object-cover object-center"
             />
@@ -155,7 +154,7 @@ function BeforeAfter() {
 
           <div className="relative overflow-hidden rounded-[1.5rem] bg-white shadow-[0_10px_35px_rgba(0,0,0,0.08)]">
             <img
-              src="/apres-vetement.jpeg"
+              src="/apres_vetement.jpeg"
               alt="Après NovSuity"
               className="aspect-[4/3] h-full w-full object-cover object-center"
             />
@@ -243,7 +242,7 @@ export default function Home() {
           </div>
 
           <div className="overflow-hidden rounded-[1.7rem] shadow-[0_24px_80px_rgba(0,0,0,0.12)]">
-            <img src="/avant-vetement.jpeg" alt="Article posé sur un lit avant NovSuity" className="aspect-[4/3] h-full w-full bg-[#fbf6ef] object-cover object-center" />
+            <img src="/article_pose.jpeg" alt="Article posé sur un lit avant NovSuity" className="aspect-[4/3] h-full w-full bg-[#fbf6ef] object-cover object-center" />
           </div>
         </div>
       </section>
@@ -300,15 +299,71 @@ export default function Home() {
         </div>
       </section>
 
+      
+
       <section id="avant-apres" className="px-6 pb-16 text-center md:px-12 md:pb-20">
         <div className="mx-auto max-w-6xl">
-          <p className="text-sm font-black uppercase tracking-[0.24em] text-[#d09d46]">Avant / Après</p>
-          <h2 className="mt-3 font-serif text-4xl font-black tracking-[-0.04em] md:text-5xl">Voyez la différence</h2>
+          <p className="text-sm font-black uppercase tracking-[0.24em] text-[#d09d46]"></p>
+          <h2 className="mt-3 font-serif text-4xl font-black tracking-[-0.04em] md:text-5xl">Avant / Après</h2>
           <div className="mt-10">
             <BeforeAfter />
           </div>
         </div>
       </section>
+
+      {/* SECTION - Ils parlent de nous */}
+<section id="presse" className="px-6 py-16 md:px-12 md:py-20">
+  <div className="mx-auto max-w-6xl">
+    <div className="flex justify-center">
+      <SectionLabel number="04">Ils parlent de nous</SectionLabel>
+    </div>
+
+    <h2 className="mx-auto mt-5 max-w-3xl text-center font-serif text-4xl font-black leading-[1.04] tracking-[-0.04em] text-[#171717] md:text-5xl">
+      NovSuity a retenu l’attention des médias
+    </h2>
+
+    <p className="mx-auto mt-5 max-w-2xl text-center text-lg leading-8 text-black/60">
+      Notre innovation a été relayée par plusieurs médias nationaux et régionaux.
+    </p>
+
+    <div className="mt-12 grid gap-6 md:grid-cols-3">
+      {[
+        {
+          media: "M6",
+          emission: "Le 12:45",
+          description: "Présentation de NovSuity dans le journal de la mi-journée.",
+        },
+        {
+          media: "France Télévisions",
+          emission: "Reportage national",
+          description: "Mise en avant de notre concept innovant.",
+        },
+        {
+          media: "France 3 Bourgogne",
+          emission: "Édition régionale",
+          description: "Focus sur l’entrepreneuriat et l’innovation locale.",
+        },
+      ].map((item) => (
+        <div
+          key={item.media}
+          className="rounded-2xl border border-black/5 bg-white p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(0,0,0,0.10)]"
+        >
+          <div className="inline-flex rounded-full bg-[#f7f1e8] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#d09d46]">
+            {item.media}
+          </div>
+
+          <h3 className="mt-6 font-serif text-3xl font-black tracking-[-0.03em] text-[#171717]">
+            {item.emission}
+          </h3>
+
+          <p className="mt-4 leading-7 text-black/60">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section id="precommande" className="px-6 pb-16 md:px-12 md:pb-20">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-[#171717] p-8 text-white shadow-[0_30px_90px_rgba(0,0,0,0.18)] md:p-14">
@@ -357,9 +412,15 @@ export default function Home() {
           <div>
             <p className="text-xs font-black uppercase tracking-[0.24em] text-[#d09d46]">Réseaux & légal</p>
             <div className="mt-5 flex gap-3">
-              <a href="https://www.instagram.com/novsuity" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-[#d09d46]" aria-label="Instagram NovSuity">
-                <Instagram className="h-5 w-5" />
-              </a>
+<a
+  href="https://www.instagram.com/novsuity"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-sm font-black text-white transition hover:bg-[#d09d46]"
+  aria-label="Instagram NovSuity"
+>
+  IG
+</a>
               <a href="https://www.tiktok.com/@novsuity" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-sm font-black text-white transition hover:bg-[#d09d46]" aria-label="TikTok NovSuity">
                 TT
               </a>
